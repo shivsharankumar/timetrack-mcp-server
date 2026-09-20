@@ -6,7 +6,10 @@ time: logging billable hours against projects, and summarizing them.
 import sqlite3
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent / "timetrack.db"
+# DB_PATH = Path(__file__).parent / "timetrack.db"
+DB_DIR = Path("/tmp/timetrack")
+DB_DIR.mkdir(parents=True, exist_ok=True)
+DB_PATH = DB_DIR / "timetrack.db"
 
 
 def get_connection():
